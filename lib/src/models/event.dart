@@ -50,7 +50,7 @@ class Event {
   EventStatus? status;
 
   /// Event color. Works only on the Android.
-  String? eventColor;
+  int? eventColor;
 
   ///Note for development:
   ///
