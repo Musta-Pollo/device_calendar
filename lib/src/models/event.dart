@@ -49,6 +49,9 @@ class Event {
   /// Indicates if this event is of confirmed, canceled, tentative or none status
   EventStatus? status;
 
+  /// Event color. Works only on the Android.
+  String? eventColor;
+
   ///Note for development:
   ///
   ///JSON field names are coded in dart, swift and kotlin to facilitate data exchange.
@@ -113,6 +116,7 @@ class Event {
 
     startTimestamp = json['eventStartDate'];
     startLocationName = json['eventStartTimeZone'];
+    eventColor = json['eventColor'];
     var startTimeZone = timeZoneDatabase.locations[startLocationName];
     startTimeZone ??= local;
     start = startTimestamp != null
@@ -237,6 +241,7 @@ class Event {
     data['eventURL'] = url?.data?.contentText;
     data['availability'] = availability.enumToString;
     data['eventStatus'] = status?.enumToString;
+    data['eventColor'] = eventColor;
 
     if (attendees != null) {
       data['attendees'] = attendees?.map((a) => a?.toJson()).toList();
