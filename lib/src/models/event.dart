@@ -62,20 +62,23 @@ class Event {
   ///`android/src/main/kotlin/com/builttoroam/devicecalendar/models/Event.kt`
   ///`android/src/main/kotlin/com/builttoroam/devicecalendar/CalendarDelegate.kt`
   ///`android/src/main/kotlin/com/builttoroam/devicecalendar/DeviceCalendarPlugin.kt`
-  Event(this.calendarId,
-      {this.eventId,
-      this.title,
-      this.start,
-      this.end,
-      this.description,
-      this.attendees,
-      this.recurrenceRule,
-      this.reminders,
-      this.availability = Availability.Busy,
-      this.location,
-      this.url,
-      this.allDay = false,
-      this.status});
+  Event(
+    this.calendarId, {
+    this.eventId,
+    this.title,
+    this.start,
+    this.end,
+    this.description,
+    this.attendees,
+    this.recurrenceRule,
+    this.reminders,
+    this.availability = Availability.Busy,
+    this.location,
+    this.url,
+    this.allDay = false,
+    this.status,
+    this.eventColor,
+  });
 
   ///Get Event from JSON.
   ///
