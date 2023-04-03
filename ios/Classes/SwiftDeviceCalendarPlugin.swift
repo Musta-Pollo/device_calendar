@@ -915,6 +915,10 @@ public class SwiftDeviceCalendarPlugin: NSObject, FlutterPlugin, EKEventViewDele
                 let ekEvent = foundEkEvents!.first(where: {$0.eventIdentifier == eventId})
 
                 do {
+                    if(akEvent == nil){
+                        self.finishWithEventNotFoundError(result: result, eventId: eventId)
+                        return
+                    }
                     if (!followingInstances!) {
                         try self.eventStore.remove(ekEvent!, span: .thisEvent, commit: true)
                     }
